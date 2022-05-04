@@ -1,0 +1,33 @@
+<html>
+  <head>
+    <script type="module" defer>
+      import { joinRoom } from 'https://cdn.skypack.dev/trystero'
+
+      const config = { appId: 'p2p-playroom' }
+      const room = joinRoom(config, 'lorens_room')
+
+      const messages = document.getElementById("messages")
+
+      room.onPeerJoin(peerId => {
+        const newLine = document.createElement("p")
+        newLine.innerHTML = `${peerId} joined`
+        messages.appendChild(newLine)
+      })
+
+      room.onPeerLeave(peerId => {
+        const newLine = document.createElement("p")
+        newLine.innerHTML = `${peerId} left`
+        messages.appendChild(newLine)
+      })
+
+
+    </script>
+  </head>
+  <body>
+    <h1>Messages:</h1>
+
+    <div id="messages">
+
+    </div>
+  </body>
+</html>
