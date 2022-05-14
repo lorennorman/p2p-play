@@ -1,20 +1,14 @@
 import './style.css'
 
-import { joinRoom } from 'trystero'
+import './vue_app.js'
+import useFileStore from './store/files.js'
 
-const config = { appId: 'p2p-playroom' }
-const room = joinRoom(config, 'lorens_room')
 
-const messages = document.getElementById("app")
+import { acceptDroppedFiles } from '/util/drag_n_dropper'
 
-room.onPeerJoin(peerId => {
-  const newLine = document.createElement("p")
-  newLine.innerHTML = `${peerId} joined`
-  messages.appendChild(newLine)
-})
+const { addFile } = useFileStore()
 
-room.onPeerLeave(peerId => {
-  const newLine = document.createElement("p")
-  newLine.innerHTML = `${peerId} left`
-  messages.appendChild(newLine)
+acceptDroppedFiles(document.body, {
+  "application/zip": addFile,
+  ".glb": addFile
 })

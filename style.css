@@ -1,0 +1,29 @@
+canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+#app {
+  background-color: gray;
+}
+
+img {
+  transition: scale .06s ease-out;
+  cursor: pointer;
+}
+
+img:hover {
+  scale: 1.15;
+}
+
+img:active {
+  scale: 1.025;
+}
+
+#drop_zone {
+  border: 5px solid blue;
+  width:  200px;
+  height: 100px;
+}

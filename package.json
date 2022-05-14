@@ -8,10 +8,15 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@zip.js/zip.js": "^2.4.11",
+    "pinia": "^2.0.14",
     "three": "^0.140.0",
-    "trystero": "^0.11.1"
+    "vue": "^3.2.33"
   },
   "devDependencies": {
+    "@vitejs/plugin-vue": "^2.3.3",
+    "eslint": "^7.32.0",
+    "eslint-plugin-vue": "^8.7.1",
     "vite": "^2.9.7"
   }
 }
