@@ -26,8 +26,10 @@ jobs:
       - name: Create repo
         run: |
           cd dist
+          git config --global init.defaultBranch main
+          git config --global user.email "lorennorman@gmail.com"
+          git config --global user.name "Loren Norman"
           git init
-          git checkout -b main
           git add -A
           git commit -m 'deploy'
 
